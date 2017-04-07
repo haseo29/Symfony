@@ -1,3 +1,7 @@
+cb_core:
+    resource: "@CBCoreBundle/Resources/config/routing.yml"
+    prefix:   /core
+
 test:
     resource: "@testBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /platform

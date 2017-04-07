@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Resources/views/Advert/form.html.twig</file>
             <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Resources/config/routing.yml</file>
-            <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Resources/views/Advert/edit.html.twig</file>
-            <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Resources/views/Advert/view.html.twig</file>
+            <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Resources/config/services.yml</file>
+            <file>file:/home/anthony/Symfony/src/CB/CoreBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/AntiSpam/PTAntiSpam.php</file>
             <file>file:/home/anthony/Symfony/src/ALD/PremierTestBundle/Controller/AdvertController.php</file>
         </group>
     </open-files>

@@ -1,0 +1,3 @@
+cb_core_homepage:
+    path:     /
+    defaults: { _controller: CBCoreBundle:Default:index }

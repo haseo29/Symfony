@@ -1,4 +1,10 @@
-services:
 #    test.example:
 #        class: ALD\PremierTestBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+services:
+    oc_platform.antispam:
+        class: ALD\PremierTestBundle\AntiSpam\PTAntiSpam
+        arguments: 
+            - "@mailer"
+            - %locale%
+            - 50

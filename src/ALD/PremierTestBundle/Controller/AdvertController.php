@@ -36,7 +36,7 @@ class AdvertController extends Controller {
 
     public function indexAction($page) {
 
-        // Notre liste d'annonce en dur
+// Notre liste d'annonce en dur
 
         $listAdverts = array(
             array(
@@ -58,14 +58,13 @@ class AdvertController extends Controller {
                 'content' => 'Nous proposons un poste pour webdesigner. Blabla…',
                 'date' => new \Datetime())
         );
-        // Et modifiez le 2nd argument pour injecter notre liste
+// Et modifiez le 2nd argument pour injecter notre liste
         return $this->render('testBundle:Advert:index.html.twig', array(
                     'listAdverts' => $listAdverts
         ));
     }
 
-    public function viewAction($id) 
-    {
+    public function viewAction($id) {
         $advert = array(
             'title' => 'Recherche développpeur Symfony2',
             'id' => $id,
@@ -79,43 +78,55 @@ class AdvertController extends Controller {
         ));
     }
 
-    public function addAction(Request $request) {//si la requete est en POST, c'est que le visiteur a soumis le formulaire
-        if ($request->isMethod('POST')) {
-            //On s'occupe de la création et de la gestion du formulaire
-            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée');
-            //Puis on redirige vers la page de visualisation de cette annonce
-            return $this->redirectToRoute('oc_platform_view', array('id' => 5));
+    /*public function addAction(Request $request) {
+        // On récupère le service
+        $antispam = $this->container->get('oc_platform.antispam');
+        // Je pars du principe que $text contient le texte d'un message quelconque
+        $text = 'hello';
+        if ($antispam->isSpam($text)) {
+            throw new \Exception('Votre message a été détecté comme spam !');
         }
-        //Si on est pas en POST, alors on affiche le formulaire
-        return $this->render('testBundle:Advert:add.html.twig');
-    }
+        
+      
+    }*/
+
+     public function addAction(Request $request) {//si la requete est en POST, c'est que le visiteur a soumis le formulaire
+      if ($request->isMethod('POST')) {
+      //On s'occupe de la création et de la gestion du formulaire
+      $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée');
+      //Puis on redirige vers la page de visualisation de cette annonce
+      return $this->redirectToRoute('oc_platform_view', array('id' => 5));
+      }
+      //Si on est pas en POST, alors on affiche le formulaire
+      return $this->render('testBundle:Advert:add.html.twig');
+      } 
 
     public function editAction($id, Request $request) {
-        
+
         if ($request->isMethod('POST')) {
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifiée');
 
             return $this->redirectToRoute('oc_platform_view', array('id' => 5));
         }
-        
-         $advert = array(
-      'title'   => 'Recherche développpeur Symfony',
-      'id'      => $id,
-      'author'  => 'Alexandre',
-      'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
-      'date'    => new \Datetime()
-    );
-      return $this->render('testBundle:Advert:edit.html.twig', array('advert' => $advert));
+
+        $advert = array(
+            'title' => 'Recherche développpeur Symfony',
+            'id' => $id,
+            'author' => 'Alexandre',
+            'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+            'date' => new \Datetime()
+        );
+        return $this->render('testBundle:Advert:edit.html.twig', array('advert' => $advert));
     }
 
     public function deleteAction($id) {
-        //Içi, on gère la suppression
+//Içi, on gère la suppression
         return $this->render('testBundle:Advert:delete.html.twig');
     }
 
     public function menuAction($limit) {
-        //on fixe en dur une liste içi, bien entendu par la suite 
-        //on la récupérera depuis la BDD!
+//on fixe en dur une liste içi, bien entendu par la suite 
+//on la récupérera depuis la BDD!
         $listAdverts = array(
             array('id' => 2, 'title' => 'Recherche développeur Symfony'),
             array('id' => 5, 'title' => 'Mission de webmaster'),
@@ -123,12 +134,12 @@ class AdvertController extends Controller {
         );
 
 
-        //Tout l'interet est içi: le controleur passe 
-        //les variables nécessaires au template !!!
+//Tout l'interet est içi: le controleur passe 
+//les variables nécessaires au template !!!
         return $this->render('testBundle:Advert:menu.html.twig', array('listAdverts' => $listAdverts));
     }
 
-    //méthode qui génère une url Absolue
+//méthode qui génère une url Absolue
     /* public function indexAction()
       {
       $url = $this->get('router')->generate('oc_platform_home', array(), UrlGeneratorInterface::ABSOLUTE_URL);
@@ -211,7 +222,7 @@ class AdvertController extends Controller {
     public function viewSlugAction($slug, $year, $_format) {
         return new Response(
                 "On pourrait afficher l'annonce correspondant au
-                slug '" . $slug . "', créée en " . $year . " et au format " . $_format . "."
+                            slug '" . $slug . "', créée en " . $year . " et au format " . $_format . "."
         );
     }
 
