@@ -1,6 +1,6 @@
 oc_platform_home:
     path:      /{page}
-    defaults: { _controller: testBundle:Advert:index, page: 1 }
+    defaults: { _controller: testBundle:Advert:index, page:    1 }
     requirements: {page : \d*} 
     
 oc_platform_view:
