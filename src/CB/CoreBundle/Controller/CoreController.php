@@ -3,6 +3,7 @@
 namespace CB\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class CoreController extends Controller {
     
@@ -17,7 +18,7 @@ class CoreController extends Controller {
         
         $pageEnCoursDeConstruction->getFlashBag()->add('info','Veuillez nous excusez, la formulaire de contact est en cours de construction');
         
-        return $this->redirectToRoute('CBCoreBundle:Core:contact.html.twig');
+        return $this->redirectToRoute('cb_core_homepage');
     }
 
 }
