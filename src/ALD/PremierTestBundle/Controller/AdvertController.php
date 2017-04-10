@@ -213,12 +213,6 @@ class AdvertController extends Controller {
       } */
 
 
-
-
-
-
-
-
     public function viewSlugAction($slug, $year, $_format) {
         return new Response(
                 "On pourrait afficher l'annonce correspondant au
