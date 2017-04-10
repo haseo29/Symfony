@@ -40,10 +40,3 @@ oc_platform_view_slug:
 
   
   
-hello_the_world:
-    path:     /hello-world
-    defaults: { _controller: testBundle:Advert:hello }
-
-bye_the_world:
-    path:     /bye-world
-    defaults: { _controller: testBundle:end:endDoor }

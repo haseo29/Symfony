@@ -1,3 +1,7 @@
 cb_core_homepage:
     path:     /
-    defaults: { _controller: CBCoreBundle:Default:index }
+    defaults: { _controller: CBCoreBundle:Core:index }
+    
+cb_core_contact:
+    path:    /contact
+    defaults: { _controller: CBCoreBundle:Core:Contact }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact</title>
+  </head>
+  <body>
+    <h1>Ceci est la page pour nous contacter!</h1>
+
+    <div>
+      {# On affiche tous les messages flash dont le nom est « info » #}
+      {#{% for message in app.session.flashbag.get('info') %}#}
+      <p>{% for message in app.flashbag.get('info')%}
+        <p>Message flash : {{ message }}</p>
+      {% endfor %}
+    </div>
+
+    <p>
+      
+      Mais pour l'instant, nous ne savons pas encore le faire, cela viendra !
+    </p>
+  </body>
+</html>
